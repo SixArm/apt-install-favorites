@@ -1,0 +1,136 @@
+#!/bin/sh
+
+##
+# apt-install-favorites
+#
+# Use the `apt` command to install our favorite packages
+# for Debian, Ubuntu, Mint, etc.
+#
+# ## Tracking
+#
+# * Package: https://github.com/sixarm/apt-install-favorites
+# * Version: 1.1.0
+# * Created: 2020-06-19T06:15:16Z
+# * Updated: 2020-06-21T01:31:43Z
+# * License: [GPL-2.0](https://spdx.org/licenses/GPL-2.0-only.html)
+# * Contact: [Joel Parker Henderson](http://joelparkerhenderson.com)
+##
+
+##
+# Bootstrapping
+##
+
+# Development
+apt-get -y install apt-transport-https
+apt-get -y install build-essential
+apt-get -y install ca-certificates
+apt-get -y install curl
+apt-get -y install gcc
+apt-get -y install git
+apt-get -y install git-core
+apt-get -y install gnupg-agent
+apt-get -y install make
+apt-get -y install openssl
+apt-get -y install patch
+apt-get -y install software-properties-common
+apt-get -y install xfsprogs
+
+# Libs
+apt-get -y install ssl-cert
+apt-get -y install libffi-dev
+apt-get -y install libgeos-dev
+apt-get -y install libssl-dev
+apt-get -y install libv8-dev
+apt-get -y install libxml2-dev
+apt-get -y install libxslt-dev
+
+# Fetching
+apt-get -y install curl
+apt-get -y install wget
+apt-get -y install jq
+
+# Editing
+apt-get -y install emacs
+apt-get -y install nano
+apt-get -y install vim
+
+##
+# Programming
+##
+
+# Compiler-related
+apt-get -y install gcc
+
+# Java-related
+apt-get -y install default-jre
+apt-get -y install default-jdk
+
+# Node-related
+apt-get -y install nodejs
+apt-get -y install npm
+
+# Perl-related
+apt-get -y install perl
+
+# Python-related
+apt-get -y install python3
+apt-get -y install python3-dev
+apt-get -y install python3-geopandas
+apt-get -y install python3-numpy
+apt-get -y install python3-pip
+
+# Ruby-related
+apt-get -y install ruby
+apt-get -y install ruby-dev
+
+# Rust-related
+apt-get -y install cargo
+
+# Utiltiies
+apt-get -y install ack-grep
+apt-get -y install atop
+apt-get -y install elinks
+apt-get -y install fd-find
+apt-get -y install gnupg
+apt-get -y install gnupg-agent
+apt-get -y install htop
+apt-get -y install jq
+apt-get -y install lynx
+apt-get -y install most
+apt-get -y install mutt
+apt-get -y install nginx
+apt-get -y install pcregrep
+apt-get -y install readline-common
+apt-get -y install ripgrep
+apt-get -y install rsync
+apt-get -y install screen
+apt-get -y install shellcheck
+apt-get -y install tmux
+apt-get -y install traceroute
+apt-get -y install unrar-free
+apt-get -y install unzip
+apt-get -y install uuid
+apt-get -y install uuid-dev
+apt-get -y install uuid-runtime
+
+# Services
+apt-get -y install monit
+
+# Apache webserver related
+apt-get -y install apache2
+apt-get -y install apache2-doc
+apt-get -y install apache2-utils
+apt-get -y install libapr1
+apt-get -y install libaprutil1
+apt-get -y install libpq5
+apt-get -y install libaprutil1-dev
+apt-get -y install libapr1-dev
+apt-get -y install libexpat1
+apt-get -y install ssl-cert
+
+# NGINX webserver related
+apt-get -y install nginx
+
+# Z shell
+apt-get -y install zsh
+apt-get -y install zsh-doc
