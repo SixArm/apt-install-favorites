@@ -54,6 +54,9 @@ apt-get -y install emacs
 apt-get -y install nano
 apt-get -y install vim
 
+# Operating
+apt-get -y install daemon 
+
 ##
 # Programming
 ##
