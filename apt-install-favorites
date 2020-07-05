@@ -89,6 +89,14 @@ apt-get -y install ruby-dev
 # Rust-related
 apt-get -y install cargo
 
+# NGINX webserver-related
+apt-get -y install nginx
+apt-get -y install geoip-bin nginx-module-geoip
+apt-get -y install libgd-dev nginx-module-image-filter
+apt-get -y install libnode-dev nginx-module-njs
+apt-get -y install perl nginx-module-perl
+apt-get -y install libxslt-dev nginx-module-xslt
+
 # Utiltiies
 apt-get -y install ack-grep
 apt-get -y install atop
@@ -101,7 +109,6 @@ apt-get -y install jq
 apt-get -y install lynx
 apt-get -y install most
 apt-get -y install mutt
-apt-get -y install nginx
 apt-get -y install pcregrep
 apt-get -y install readline-common
 apt-get -y install ripgrep
