@@ -9,9 +9,9 @@
 # ## Tracking
 #
 # * Package: https://github.com/sixarm/apt-install-favorites
-# * Version: 1.1.0
+# * Version: 1.2.0
 # * Created: 2020-06-19T06:15:16Z
-# * Updated: 2020-06-21T01:31:43Z
+# * Updated: 2025-11-27T13:35:03Z
 # * License: [GPL-2.0](https://spdx.org/licenses/GPL-2.0-only.html)
 # * Contact: [Joel Parker Henderson](http://joelparkerhenderson.com)
 ##
@@ -20,127 +20,162 @@
 # Bootstrapping
 ##
 
+# Setup
+apt -y install ansible
+
 # Development
-apt-get -y install apt-transport-https
-apt-get -y install build-essential
-apt-get -y install ca-certificates
-apt-get -y install curl
-apt-get -y install gcc
-apt-get -y install git
-apt-get -y install git-core
-apt-get -y install gnupg-agent
-apt-get -y install make
-apt-get -y install openssl
-apt-get -y install patch
-apt-get -y install software-properties-common
-apt-get -y install xfsprogs
+apt -y install autoconf
+apt -y install automake
+apt -y install bison
+apt -y install build-essential
+apt -y install cmake
+apt -y install flex
+apt -y install apt-transport-https
+apt -y install build-essential
+apt -y install ca-certificates
+apt -y install curl
+apt -y install gcc
+apt -y install gdb
+apt -y install gcc
+apt -y install git
+apt -y install git-core
+apt -y install gnupg-agent
+apt -y install make
+apt -y install openssl
+apt -y install patch
+apt -y install pkg-config
+apt -y install software-properties-common
+apt -y install xfsprogs
 
 # Libs
-apt-get -y install ssl-cert
-apt-get -y install libffi-dev
-apt-get -y install libgeos-dev
-apt-get -y install libssl-dev
-apt-get -y install libv8-dev
-apt-get -y install libxml2-dev
-apt-get -y install libxslt-dev
+apt -y install ssl-cert
+apt -y install libffi-dev
+apt -y install libgeos-dev
+apt -y install libssl-dev
+apt -y install libv8-dev
+apt -y install libxml2-dev
+apt -y install libxslt-dev
 
 # Fetching
-apt-get -y install curl
-apt-get -y install wget
-apt-get -y install jq
+apt -y install curl
+apt -y install wget
+apt -y install jq
 
 # Editing
-apt-get -y install emacs
-apt-get -y install nano
-apt-get -y install vim
+apt -y install emacs
+apt -y install nano
+apt -y install vim
 
 # Operating
-apt-get -y install daemon 
+apt -y install daemon
+
+##
+# Docker
+##
+
+# Add Docker's official GPG key:
+apt update
+apt install ca-certificates curl
+install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/debian
+Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")
+Components: stable
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+apt update
+apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 ##
 # Programming
 ##
 
 # Compiler-related
-apt-get -y install gcc
+apt -y install gcc
 
 # Java-related
-apt-get -y install default-jre
-apt-get -y install default-jdk
+apt -y install default-jre
+apt -y install default-jdk
 
 # Node-related
-apt-get -y install nodejs
-apt-get -y install npm
+apt -y install nodejs
+apt -y install npm
 
 # Perl-related
-apt-get -y install perl
+apt -y install perl
 
 # Python-related
-apt-get -y install python3
-apt-get -y install python3-dev
-apt-get -y install python3-geopandas
-apt-get -y install python3-numpy
-apt-get -y install python3-pip
+apt -y install python3
+apt -y install python3-dev
+apt -y install python3-geopandas
+apt -y install python3-numpy
+apt -y install python3-pip
 
 # Ruby-related
-apt-get -y install ruby
-apt-get -y install ruby-dev
+apt -y install ruby
+apt -y install ruby-dev
 
 # Rust-related
-apt-get -y install cargo
+apt -y install cargo
 
 # NGINX webserver-related
-apt-get -y install nginx
-apt-get -y install geoip-bin nginx-module-geoip
-apt-get -y install libgd-dev nginx-module-image-filter
-apt-get -y install libnode-dev nginx-module-njs
-apt-get -y install perl nginx-module-perl
-apt-get -y install libxslt-dev nginx-module-xslt
+apt -y install nginx
+apt -y install geoip-bin nginx-module-geoip
+apt -y install libgd-dev nginx-module-image-filter
+apt -y install libnode-dev nginx-module-njs
+apt -y install perl nginx-module-perl
+apt -y install libxslt-dev nginx-module-xslt
 
 # Utiltiies
-apt-get -y install ack-grep
-apt-get -y install atop
-apt-get -y install elinks
-apt-get -y install fd-find
-apt-get -y install gnupg
-apt-get -y install gnupg-agent
-apt-get -y install htop
-apt-get -y install jq
-apt-get -y install lynx
-apt-get -y install most
-apt-get -y install mutt
-apt-get -y install pcregrep
-apt-get -y install readline-common
-apt-get -y install ripgrep
-apt-get -y install rsync
-apt-get -y install screen
-apt-get -y install shellcheck
-apt-get -y install tmux
-apt-get -y install traceroute
-apt-get -y install unrar-free
-apt-get -y install unzip
-apt-get -y install uuid
-apt-get -y install uuid-dev
-apt-get -y install uuid-runtime
+apt -y install ack-grep
+apt -y install atop
+apt -y install elinks
+apt -y install fd-find
+apt -y install gnupg
+apt -y install gnupg-agent
+apt -y install htop
+apt -y install jq
+apt -y install lynx
+apt -y install most
+apt -y install mutt
+apt -y install pcregrep
+apt -y install readline-common
+apt -y install ripgrep
+apt -y install rsync
+apt -y install screen
+apt -y install shellcheck
+apt -y install tmux
+apt -y install traceroute
+apt -y install unrar-free
+apt -y install unzip
+apt -y install uuid
+apt -y install uuid-dev
+apt -y install uuid-runtime
 
 # Services
-apt-get -y install monit
+apt -y install monit
 
 # Apache webserver related
-apt-get -y install apache2
-apt-get -y install apache2-doc
-apt-get -y install apache2-utils
-apt-get -y install libapr1
-apt-get -y install libaprutil1
-apt-get -y install libpq5
-apt-get -y install libaprutil1-dev
-apt-get -y install libapr1-dev
-apt-get -y install libexpat1
-apt-get -y install ssl-cert
+apt -y install apache2
+apt -y install apache2-doc
+apt -y install apache2-utils
+apt -y install libapr1
+apt -y install libaprutil1
+apt -y install libpq5
+apt -y install libaprutil1-dev
+apt -y install libapr1-dev
+apt -y install libexpat1
+apt -y install ssl-cert
 
 # NGINX webserver related
-apt-get -y install nginx
+apt -y install nginx
 
 # Z shell
-apt-get -y install zsh
-apt-get -y install zsh-doc
+apt -y install zsh
+apt -y install zsh-doc
