@@ -71,6 +71,29 @@ apt -y install daemon
 
 ##
 # Docker
+#
+# To install Docker on Debian or Ubuntu:
+#
+# - https://docs.docker.com/engine/install/debian/
+# - https://docs.docker.com/engine/install/ubuntu/
+#
+# To start Docker:
+#
+# ```
+# sudo systemctl start docker
+# ```
+#
+# To verify Docker is running:
+#
+# ```sh
+# sudo systemctl status docker
+# ```
+#
+# To verify Docker can run an image:
+#
+# ```sh
+# sudo docker run hello-world
+# ```
 ##
 
 # Add Docker's official GPG key:
@@ -161,17 +184,32 @@ apt -y install uuid-runtime
 # Services
 apt -y install monit
 
+##
 # Apache webserver related
-apt -y install apache2
-apt -y install apache2-doc
-apt -y install apache2-utils
-apt -y install libapr1
-apt -y install libaprutil1
-apt -y install libpq5
-apt -y install libaprutil1-dev
-apt -y install libapr1-dev
-apt -y install libexpat1
-apt -y install ssl-cert
+##
+
+# apt -y install apache2
+# apt -y install apache2-doc
+# apt -y install apache2-utils
+# apt -y install libapr1
+# apt -y install libaprutil1
+# apt -y install libpq5
+# apt -y install libaprutil1-dev
+# apt -y install libapr1-dev
+# apt -y install libexpat1
+# apt -y install ssl-cert
+
+##
+# Caddy webserver related
+##
+
+apt install -y debian-keyring debian-archive-keyring apt-transport-https curl
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+chmod o+r /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+chmod o+r /etc/apt/sources.list.d/caddy-stable.list
+apt update
+apt install caddy
 
 # NGINX webserver related
 apt -y install nginx
